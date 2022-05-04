@@ -1,0 +1,61 @@
+<div class="cuerpo container px-1">
+    <div class="row row-cols-2 row-cols-md-1 g-4">
+   
+      <div class="col">
+         <div class="card h-100">
+           <div class="card-body">
+               <div class="row">
+               <div class="col"><h5 class="card-title col">{{TituloSeccion}}</h5></div>
+                 <div class="col"><button (click)="getGuardarCambios()" class="boto btn fa-solid fa-circle-check" [hidden]="editPropiety" ></button>
+                 <button (click)="getHabilitarEdit()" class="boto btn fa-solid fa-pen" *ngIf="editPropiety"></button></div>
+                 </div>
+           <form class="form-group col" [hidden]="editPropiety">
+ 
+             <div class="form-group col-md3">
+               <label for="tituloPuesto">Idioma:</label>
+               <input type="text" id="tituloPuesto" name="tituloPuesto" class="form-control" [(ngModel)]="cuadroIdioma">
+             </div>
+             <div class="form-group col-md3">
+                <label for="tituloPuesto">Nivel oral:</label>
+                <input type="text" id="tituloPuesto" name="tituloPuesto" class="form-control" [(ngModel)]="cuadroOral">
+              </div>
+              <div class="form-group col-md3">
+                <label for="tituloPuesto">Nivel lectura:</label>
+                <input type="text" id="tituloPuesto" name="tituloPuesto" class="form-control" [(ngModel)]="cuadroLeido">
+              </div>
+              <div class="form-group col-md3">
+                <label for="tituloPuesto">Nivel escrito:</label>
+                <input type="text" id="tituloPuesto" name="tituloPuesto" class="form-control" [(ngModel)]="cuadroEscrito">
+              </div>
+             
+             <div class="col">
+               <button type="submit" class="btn btn-primary" (click)="agregarIdioma()" style="float: right; margin-top: 20px;">Agregar</button>
+             </div>
+ 
+           </form>
+         
+ 
+     </div>
+   
+     <div class="container">
+         
+           <div *ngFor="let seccn of mylanguages; let i=index">
+            <button class="boto btn fa-solid fa-delete-left" [hidden]="editPropiety" (click)="eliminaridioma(i)"></button>
+            <ul>
+            <li class="titulo">{{seccn.lengua}}</li>
+                <ul>
+                    <li>Nivel oral: {{seccn.oral}}</li>
+                    <li>Nivel lectura: {{seccn.read}}</li>
+                    <li>Nivel escrito: {{seccn.write}}</li>
+                </ul>
+            </ul>
+           </div>
+         
+       </div>
+ 
+   </div>
+     </div>
+   </div>
+ </div>
+   
+ 

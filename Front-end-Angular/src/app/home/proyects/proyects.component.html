@@ -1,0 +1,57 @@
+<body>
+    <div class="container px-1">
+        <div class="row row-cols-2 row-cols-md-1 g-4">
+       
+          <div class="col">
+             <div class="card h-100">
+               <div class="card-body">
+                 <button (click)="getGuardarCambios()" class="boto btn fa-solid fa-circle-check" [hidden]="editPropiety" ></button>
+                 <button (click)="getHabilitarEdit()" class="boto btn fa-solid fa-pen" *ngIf="editPropiety"></button>
+                 <header class="d-flex align-items-center pb-2 mb-2 border-bottom">
+                   <h5 class="card-title col">{{TituloSeccion}}</h5></header>
+     
+               <form class="form-group col" [hidden]="editPropiety">
+     
+                 <div class="form-group col-md3">
+                   <label for="tituloPuesto">Nombre del proyecto:</label>
+                   <input type="text" id="tituloPuesto" name="tituloPuesto" class="form-control" [(ngModel)]="cuadroTitulopuesto">
+                 </div>
+                 <div class="form-group col-md3">
+                   <label for="instiEmpresa">Detalles:</label>
+                   <input type="text" id="instiEmpresa"  name="instiEmpresa"  class="form-control" [(ngModel)]="cuadroInstiempresa">
+                 </div>
+                 
+                 
+                 <div class="col">
+                   <button type="submit" class="btn btn-primary" (click)="agregarTarjeta()" style="float: right; margin-top: 20px;">Agregar</button>
+                 </div>
+     
+               </form>
+             
+     
+         </div>
+       
+         <div class="container">
+             
+               <div *ngFor="let seccn of secciones;  let i=index">
+                 <button class="boto btn fa-solid fa-delete-left" [hidden]="editPropiety" (click)=" eliminarSeccion(i)"></button>
+                 <header class="d-flex align-items-center pb-2 mb-2 border-bottom">
+                   <div  class="row">
+                 <div class="titulo">{{seccn.tituloPuesto}}</div>
+                 <div class="insti">{{seccn.instiEmpresa}}</div>
+                 </div>
+               </header>     
+               </div>
+             
+           </div>
+     
+       </div>
+     
+       </div>
+     </div>
+     
+     </div>
+       
+      
+    </body>
+    

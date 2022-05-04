@@ -1,0 +1,12 @@
+
+.container-fluid{
+    background-color: darkslategray;
+    margin-top: 10px;
+    box-shadow: 0px -10px  15px darkslategray;
+    width: 100%;
+}
+.footer{
+    background-color: darkslategrey;
+   
+    height: 100%;
+}

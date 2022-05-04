@@ -1,0 +1,20 @@
+<body>
+<div class="container col-lg-10 mx-auto p-3 ">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-2" id="welcome">Bienvenidos a mi portfolio.</span>
+      </a>
+    </header>
+  
+    <main>
+      <h1 class="info">Un poco sobre mi
+        <button (click)="getHabilitarEdit()" class="boto btn fa-solid fa-pen" *ngIf="editPropiety"></button>
+        <button (click)="getGuardarTexto()" class="boto btn fa-solid fa-circle-check" [hidden]="editPropiety" ></button>
+      </h1>
+       <p class="info fs-5 col-md-8">{{about.value}}</p>  
+      <input class="form-control" type="text" #about placeholder="Escribir sobre mi" [hidden]="editPropiety">
+      
+    </main>
+    
+  </div>
+</body>
